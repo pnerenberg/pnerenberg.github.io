@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2018-09-27 21:08:06 -0700">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+
+    
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/favicons/swc/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/favicons/swc/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/favicons/swc/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicons/swc/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/assets/favicons/swc/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/favicons/swc/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/assets/favicons/swc/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicons/swc/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/assets/favicons/swc/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/assets/favicons/swc/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/assets/favicons/swc/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/assets/favicons/swc/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/assets/favicons/swc/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Software Carpentry - Plotting and Programming in Python - Part 1"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/assets/favicons/swc/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="/assets/favicons/swc/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="/assets/favicons/swc/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="/assets/favicons/swc/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="/assets/favicons/swc/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Plotting and Programming in Python - Part 1: Plotting</title>
+  </head>
+  <body>
+    <div class="container">
+      
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+
+        
+	
+        <li><a href="../setup/">Setup</a></li>
+
+        
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-run-quit/index.html">Running and Quitting</a></li>
+            
+            <li><a href="../02-variables/index.html">Variables and Assignment</a></li>
+            
+            <li><a href="../03-types-conversion/index.html">Data Types and Type Conversion</a></li>
+            
+            <li><a href="../04-break/index.html">Morning Break</a></li>
+            
+            <li><a href="../05-built-in/index.html">Built-in Functions and Help</a></li>
+            
+            <li><a href="../06-libraries/index.html">Libraries</a></li>
+            
+            <li><a href="../07-lunch/index.html">Lunch</a></li>
+            
+            <li><a href="../08-reading-tabular/index.html">Reading Tabular Data into DataFrames</a></li>
+            
+            <li><a href="../09-data-frames/index.html">Pandas DataFrames</a></li>
+            
+            <li><a href="../10-break/index.html">Afternoon Break</a></li>
+            
+            <li><a href="../11-plotting/index.html">Plotting</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio.html">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference/">Reference</a></li>
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../design/">Lesson Design</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../exercises/">Further Exercises</a></li>
+            
+            <li><a href="../figures/index.html">Figures</a></li>
+            
+            <li><a href="../guide/">Instructors' Guide</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../LICENSE.html">License</a></li>
+	
+	<li><a href="/edit/gh-pages/_episodes/11-plotting.md">Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../10-break/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+    <h3 class="maintitle"><a href="../">Plotting and Programming in Python - Part 1</a></h3>
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="sr-only">lesson home</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Plotting</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 15 min
+      <br/>
+      <strong>Exercises:</strong> 20 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How can I plot my data?</p>
+</li>
+	
+	<li><p>How can I save my plot for publishing?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Create a time series plot showing a single data set.</p>
+</li>
+	
+	<li><p>Create a scatter plot showing relationship between two data sets.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<h2 id="matplotlib-is-the-most-widely-used-scientific-plotting-library-in-python"><a href="https://matplotlib.org/"><code class="highlighter-rouge">matplotlib</code></a> is the most widely used scientific plotting library in Python.</h2>
+
+<ul>
+  <li>Commonly use a sub-library called <a href="https://matplotlib.org/api/pyplot_api.html"><code class="highlighter-rouge">matplotlib.pyplot</code></a>.</li>
+  <li>The Jupyter Notebook will render plots inline if we ask it to using a “magic” command.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</code></pre></div></div>
+
+<ul>
+  <li>Simple plots are then (fairly) simple to create.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">time</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">position</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">position</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Time (hr)'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Position (km)'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../fig/9_simple_position_time_plot.png" alt="Simple Position-Time Plot" /></p>
+<h2 id="plot-data-directly-from-a-pandas-dataframe">Plot data directly from a <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html"><code class="highlighter-rouge">Pandas dataframe</code></a>.</h2>
+
+<ul>
+  <li>We can also plot <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">Pandas dataframes</a>.</li>
+  <li>This implicitly uses <a href="https://matplotlib.org/api/pyplot_api.html"><code class="highlighter-rouge">matplotlib.pyplot</code></a>.</li>
+  <li>Before plotting, we convert the column headings from a <code class="highlighter-rouge">string</code> to <code class="highlighter-rouge">integer</code> data type, since they represent numerical values</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span>
+
+<span class="n">data</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_oceania.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+
+<span class="c"># Extract year from last 4 characters of each column name</span>
+<span class="n">years</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'gdpPercap_'</span><span class="p">)</span>
+<span class="c"># Convert year values to integers, saving results back to dataframe</span>
+<span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">years</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'Australia'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="../fig/9_gdp_australia.png" alt="GDP plot for Australia" /></p>
+<h2 id="select-and-transform-data-then-plot-it">Select and transform data, then plot it.</h2>
+
+<ul>
+  <li>By default, <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.plot.html#pandas.DataFrame.plot"><code class="highlighter-rouge">DataFrame.plot</code></a> plots with the rows as the X axis.</li>
+  <li>We can transpose the data in order to plot multiple series.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'GDP per capita'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../fig/9_gdp_australia_nz.png" alt="GDP plot for Australia and New Zealand" /></p>
+<h2 id="many-styles-of-plot-are-available">Many styles of plot are available.</h2>
+
+<ul>
+  <li>For example, do a bar plot using a fancier style.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s">'ggplot'</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'bar'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'GDP per capita'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../fig/9_gdp_bar.png" alt="GDP barplot for Australia" /></p>
+
+<h2 id="data-can-also-be-plotted-by-calling-the-matplotlib-plot-function-directly">Data can also be plotted by calling the <code class="highlighter-rouge">matplotlib</code> <code class="highlighter-rouge">plot</code> function directly.</h2>
+<ul>
+  <li>The command is <code class="highlighter-rouge">plt.plot(x, y)</code></li>
+  <li>The color / format of markers can also be specified as an optical argument: e.g. ‘b-‘ is a blue line, ‘g–’ is a green dashed line.</li>
+</ul>
+
+<h2 id="get-australia-data-from-dataframe">Get Australia data from dataframe</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">years</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">gdp_australia</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'Australia'</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">gdp_australia</span><span class="p">,</span> <span class="s">'g--'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../fig/9_gdp_australia_formatted.png" alt="GDP formatted plot for Australia" /></p>
+
+<h2 id="can-plot-many-sets-of-data-together">Can plot many sets of data together.</h2>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Select two countries' worth of data.</span>
+<span class="n">gdp_australia</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'Australia'</span><span class="p">]</span>
+<span class="n">gdp_nz</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'New Zealand'</span><span class="p">]</span>
+
+<span class="c"># Plot with differently-colored markers.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">gdp_australia</span><span class="p">,</span> <span class="s">'b-'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'Australia'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">gdp_nz</span><span class="p">,</span> <span class="s">'g-'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'New Zealand'</span><span class="p">)</span>
+
+<span class="c"># Create legend.</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">'upper left'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Year'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'GDP per capita ($)'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../fig/9_gdp_australia_nz_formatted.png" alt="GDP formatted plot for Australia and New Zealand" /></p>
+<ul>
+  <li>Plot a scatter plot correlating the GDP of Australia and New Zealand</li>
+  <li>Use either <code class="highlighter-rouge">plt.scatter</code> or <code class="highlighter-rouge">DataFrame.plot.scatter</code></li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gdp_australia</span><span class="p">,</span> <span class="n">gdp_nz</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../fig/9_gdp_correlation_plt.png" alt="GDP correlation using plt.scatter" /></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">'Australia'</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s">'New Zealand'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><img src="../fig/9_gdp_correlation_data.png" alt="GDP correlation using data.T.plot.scatter" /></p>
+<blockquote class="challenge">
+  <h2 id="minima-and-maxima">Minima and Maxima</h2>
+
+  <p>Fill in the blanks below to plot the minimum GDP per capita over time
+for all the countries in Europe.
+Modify it again to plot the maximum GDP per capita over time for Europe.</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_europe</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_europe.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+<span class="n">data_europe</span><span class="o">.</span><span class="n">____</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s">'min'</span><span class="p">)</span>
+<span class="n">data_europe</span><span class="o">.</span><span class="n">____</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">'best'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_europe</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_europe.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+<span class="n">data_europe</span><span class="o">.</span><span class="nb">min</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s">'min'</span><span class="p">)</span>
+<span class="n">data_europe</span><span class="o">.</span><span class="nb">max</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s">'max'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">'best'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+</code></pre></div>    </div>
+    <p><img src="../fig/9_minima_maxima_solution.png" alt="Minima Maxima Solution" /></p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="correlations">Correlations</h2>
+
+  <p>Modify the example in the notes to create a scatter plot showing
+the relationship between the minimum and maximum GDP per capita
+among the countries in Asia for each year in the data set.
+What relationship do you see (if any)?</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_asia</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_asia.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+<span class="n">data_asia</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'scatter'</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s">'min'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'max'</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+
+    <p><img src="../fig/9_correlations_solution1.png" alt="Correlations Solution 1" /></p>
+
+    <p>No particular correlations can be seen between the minimum and maximum gdp values
+year on year. It seems the fortunes of asian countries do not rise and fall together.</p>
+
+  </blockquote>
+
+  <p>You might note that the variability in the maximum is much higher than
+that of the minimum.  Take a look at the maximum and the max indexes:</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_asia</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_asia.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+<span class="n">data_asia</span><span class="o">.</span><span class="nb">max</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data_asia</span><span class="o">.</span><span class="n">idxmax</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">data_asia</span><span class="o">.</span><span class="n">idxmin</span><span class="p">())</span>
+</code></pre></div>  </div>
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+    <p><img src="../fig/9_correlations_solution2.png" alt="Correlations Solution 2" /></p>
+
+    <p>Seems the variability in this value is due to a sharp drop after 1972.
+Some geopolitics at play perhaps? Given the dominance of oil producing countries,
+maybe the Brent crude index would make an interesting comparison?
+Whilst Myanmar consistently has the lowest gdp, the highest gdb nation has varied
+more notably.</p>
+
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="more-correlations">More Correlations</h2>
+
+  <p>This short program creates a plot showing
+the correlation between GDP and life expectancy for 2007,
+normalizing marker size by population:</p>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_all</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_all.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+<span class="n">data_all</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'scatter'</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s">'gdpPercap_2007'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'lifeExp_2007'</span><span class="p">,</span>
+              <span class="n">s</span><span class="o">=</span><span class="n">data_all</span><span class="p">[</span><span class="s">'pop_2007'</span><span class="p">]</span><span class="o">/</span><span class="mf">1e6</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <p>Using online help and other resources,
+explain what each argument to <code class="highlighter-rouge">plot</code> does.</p>
+
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+    <p><img src="../fig/9_more_correlations_solution.png" alt="More Correlations Solution" /></p>
+
+    <p>A good place to look is the documentation for the plot function -
+help(data_all.plot).</p>
+
+    <p>kind - As seen already this determines the kind of plot to be drawn.</p>
+
+    <p>x and y - A column name or index that determines what data will be
+placed on the x and y axes of the plot</p>
+
+    <p>s - Details for this can be found in the documentation of plt.scatter.
+A single number or one value for each data point. Determines the size
+of the plotted points.</p>
+
+  </blockquote>
+</blockquote>
+
+<blockquote class="callout">
+  <h2 id="saving-your-plot-to-a-file">Saving your plot to a file</h2>
+
+  <p>If you are satisfied with the plot you see you may want to save it to a file,
+perhaps to include it in a publication. There is a function in the
+matplotlib.pyplot module that accomplishes this:
+<a href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.savefig.html">savefig</a>.
+Calling this function, e.g. with</p>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'my_figure.png'</span><span class="p">)</span>
+</code></pre></div>  </div>
+
+  <p>will save the current figure to the file <code class="highlighter-rouge">my_figure.png</code>. The file format
+will automatically be deduced from the file name extension (other formats
+are pdf, ps, eps and svg).</p>
+
+  <p>Note that functions in <code class="highlighter-rouge">plt</code> refer to a global figure variable
+and after a figure has been displayed to the screen (e.g. with <code class="highlighter-rouge">plt.show</code>) 
+matplotlib will make this  variable refer to a new empty figure.
+Therefore, make sure you call <code class="highlighter-rouge">plt.savefig</code> before the plot is displayed to
+the screen, otherwise you may find a file with an empty plot.</p>
+
+  <p>When using dataframes, data is often generated and plotted to screen in one line,
+and <code class="highlighter-rouge">plt.savefig</code> seems not to be a possible approach.
+One possibility to save the figure to file is then to</p>
+
+  <ul>
+    <li>save a reference to the current figure in a local variable (with <code class="highlighter-rouge">plt.gcf</code>)</li>
+    <li>call the <code class="highlighter-rouge">savefig</code> class method from that varible.</li>
+  </ul>
+
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gcf</span><span class="p">()</span> <span class="c"># get current figure</span>
+<span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'bar'</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s">'my_figure.png'</span><span class="p">)</span>
+</code></pre></div>  </div>
+</blockquote>
+
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p><a href="https://matplotlib.org/"><code class="highlighter-rouge">matplotlib</code></a> is the most widely used scientific plotting library in Python.</p>
+</li>
+    
+    <li><p>Plot data directly from a Pandas dataframe.</p>
+</li>
+    
+    <li><p>Select and transform data, then plot it.</p>
+</li>
+    
+    <li><p>Many styles of plot are available: see the <a href="https://python-graph-gallery.com/matplotlib/">Python Graph Gallery</a> for more options.</p>
+</li>
+    
+    <li><p>Can plot many sets of data together.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../10-break/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span><span class="sr-only">lesson home</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      
+<footer>
+  <div class="row">
+    <div class="col-md-6 copyright" align="left">
+	
+	Copyright &copy; 2018–2018
+	<a href="https://carpentries.org/">The Carpentries</a>
+        <br>
+        Copyright &copy; 2016–2018
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+    </div>
+    <div class="col-md-6 help-links" align="right">
+	
+	<a href="/edit/gh-pages/_episodes/11-plotting.md">Edit on GitHub</a>
+	
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CITATION">Cite</a>
+	/
+	<a href="mailto:team@carpentries.org">Contact</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" align="center">
+      Using <a href="https://github.com/carpentries/styles/">The Carpentries style</a>
+      version <a href="https://github.com/carpentries/styles/releases/tag/v9.5.2">9.5.2</a>.
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>

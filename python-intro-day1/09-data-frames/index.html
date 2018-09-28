@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2018-09-27 21:08:06 -0700">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/syntax.css" />
+
+    
+
+
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/assets/favicons/swc/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/favicons/swc/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/favicons/swc/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/favicons/swc/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="/assets/favicons/swc/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/assets/favicons/swc/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/assets/favicons/swc/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/assets/favicons/swc/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="/assets/favicons/swc/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="/assets/favicons/swc/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/assets/favicons/swc/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/assets/favicons/swc/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="/assets/favicons/swc/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Software Carpentry - Plotting and Programming in Python - Part 1"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="/assets/favicons/swc/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="/assets/favicons/swc/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="/assets/favicons/swc/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="/assets/favicons/swc/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="/assets/favicons/swc/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+    <title>Plotting and Programming in Python - Part 1: Pandas DataFrames</title>
+  </head>
+  <body>
+    <div class="container">
+      
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      
+      <a href="https://software-carpentry.org" class="pull-left">
+        <img class="navbar-logo" src="../assets/img/swc-icon-blue.svg" alt="Software Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="../">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	
+        <li><a href="../CODE_OF_CONDUCT.html">Code of Conduct</a></li>
+
+        
+	
+        <li><a href="../setup/">Setup</a></li>
+
+        
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Episodes <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            <li><a href="../01-run-quit/index.html">Running and Quitting</a></li>
+            
+            <li><a href="../02-variables/index.html">Variables and Assignment</a></li>
+            
+            <li><a href="../03-types-conversion/index.html">Data Types and Type Conversion</a></li>
+            
+            <li><a href="../04-break/index.html">Morning Break</a></li>
+            
+            <li><a href="../05-built-in/index.html">Built-in Functions and Help</a></li>
+            
+            <li><a href="../06-libraries/index.html">Libraries</a></li>
+            
+            <li><a href="../07-lunch/index.html">Lunch</a></li>
+            
+            <li><a href="../08-reading-tabular/index.html">Reading Tabular Data into DataFrames</a></li>
+            
+            <li><a href="../09-data-frames/index.html">Pandas DataFrames</a></li>
+            
+            <li><a href="../10-break/index.html">Afternoon Break</a></li>
+            
+            <li><a href="../11-plotting/index.html">Plotting</a></li>
+            
+	    <li role="separator" class="divider"></li>
+            <li><a href="../aio.html">All in one page (Beta)</a></li>
+          </ul>
+        </li>
+	
+
+	
+	
+        <li class="dropdown">
+          <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../reference/">Reference</a></li>
+            
+            <li><a href="../about/">About</a></li>
+            
+            <li><a href="../design/">Lesson Design</a></li>
+            
+            <li><a href="../discuss/">Discussion</a></li>
+            
+            <li><a href="../exercises/">Further Exercises</a></li>
+            
+            <li><a href="../figures/index.html">Figures</a></li>
+            
+            <li><a href="../guide/">Instructors' Guide</a></li>
+            
+          </ul>
+        </li>
+	
+
+	
+        <li><a href="../LICENSE.html">License</a></li>
+	
+	<li><a href="/edit/gh-pages/_episodes/09-data-frames.md">Improve this page <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>
+	
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../08-reading-tabular/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+    <h3 class="maintitle"><a href="../">Plotting and Programming in Python - Part 1</a></h3>
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../10-break/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+<article>
+<div class="row">
+  <div class="col-md-1">
+  </div>
+  <div class="col-md-10">
+    <h1 class="maintitle">Pandas DataFrames</h1>
+  </div>
+  <div class="col-md-1">
+  </div>
+</div>
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+      <strong>Teaching:</strong> 15 min
+      <br/>
+      <strong>Exercises:</strong> 20 min
+    </div>
+    <div class="col-md-9">
+      <strong>Questions</strong>
+      <ul>
+	
+	<li><p>How can I do statistical analysis of tabular data?</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	
+	<li><p>Select individual values from a Pandas dataframe.</p>
+</li>
+	
+	<li><p>Select entire rows or entire columns from a dataframe.</p>
+</li>
+	
+	<li><p>Select a subset of both rows and columns from a dataframe in a single operation.</p>
+</li>
+	
+	<li><p>Select a subset of a dataframe by a single Boolean criterion.</p>
+</li>
+	
+      </ul>
+    </div>
+  </div>
+
+</blockquote>
+
+<h2 id="note-about-pandas-dataframesseries">Note about Pandas DataFrames/Series</h2>
+
+<p>A <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html">DataFrame</a> is a collection of <a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.html">Series</a>;
+The DataFrame is the way Pandas represents a table, and Series is the data-structure
+Pandas use to represent a column.</p>
+
+<p>Pandas is built on top of the <a href="http://www.numpy.org/">Numpy</a> library, which in practice means that
+most of the methods defined for Numpy Arrays apply to Pandas Series/DataFrames.</p>
+
+<p>What makes Pandas so attractive is the powerful interface to access individual records
+of the table, proper handling of missing values, and relational-databases operations
+between DataFrames.</p>
+
+<h2 id="selecting-values">Selecting values</h2>
+
+<p>To access a value at the position <code class="highlighter-rouge">[i,j]</code> of a DataFrame, we have two options, depending on
+what is the meaning of <code class="highlighter-rouge">i</code> in use.
+Remember that a DataFrame provides a <em>index</em> as a way to identify the rows of the table;
+a row, then, has a <em>position</em> inside the table as well as a <em>label</em>, which
+uniquely identifies its <em>entry</em> in the DataFrame.</p>
+
+<h2 id="use-dataframeiloc--to-select-values-by-their-entry-position">Use <code class="highlighter-rouge">DataFrame.iloc[..., ...]</code> to select values by their (entry) position</h2>
+
+<ul>
+  <li>Can specify location by numerical index analogously to 2D version of character selection in strings.</li>
+</ul>
+
+<div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import pandas
+data = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+print(data.iloc[0, 0])
+</code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1601.056136
+</code></pre></div></div>
+
+<h2 id="use-dataframeloc--to-select-values-by-their-entry-label">Use <code class="highlighter-rouge">DataFrame.loc[..., ...]</code> to select values by their (entry) label.</h2>
+
+<ul>
+  <li>Can specify location by row name analogously to 2D version of dictionary keys.</li>
+</ul>
+
+<div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+print(data.loc["Albania", "gdpPercap_1952"])
+</code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1601.056136
+</code></pre></div></div>
+<h2 id="use--on-its-own-to-mean-all-columns-or-all-rows">Use <code class="highlighter-rouge">:</code> on its own to mean all columns or all rows.</h2>
+
+<ul>
+  <li>Just like Python’s usual slicing notation.</li>
+</ul>
+
+<div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(data.loc["Albania", :])
+</code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gdpPercap_1952    1601.056136
+gdpPercap_1957    1942.284244
+gdpPercap_1962    2312.888958
+gdpPercap_1967    2760.196931
+gdpPercap_1972    3313.422188
+gdpPercap_1977    3533.003910
+gdpPercap_1982    3630.880722
+gdpPercap_1987    3738.932735
+gdpPercap_1992    2497.437901
+gdpPercap_1997    3193.054604
+gdpPercap_2002    4604.211737
+gdpPercap_2007    5937.029526
+Name: Albania, dtype: float64
+</code></pre></div></div>
+
+<ul>
+  <li>Would get the same result printing <code class="highlighter-rouge">data.loc["Albania"]</code> (without a second index).</li>
+</ul>
+
+<div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(data.loc[:, "gdpPercap_1952"])
+</code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>country
+Albania                    1601.056136
+Austria                    6137.076492
+Belgium                    8343.105127
+⋮ ⋮ ⋮
+Switzerland               14734.232750
+Turkey                     1969.100980
+United Kingdom             9979.508487
+Name: gdpPercap_1952, dtype: float64
+</code></pre></div></div>
+
+<ul>
+  <li>Would get the same result printing <code class="highlighter-rouge">data["gdpPercap_1952"]</code></li>
+  <li>Also get the same result printing <code class="highlighter-rouge">data.gdpPercap_1952</code> (since it’s a column name)</li>
+</ul>
+
+<h2 id="select-multiple-columns-or-rows-using-dataframeloc-and-a-named-slice">Select multiple columns or rows using <code class="highlighter-rouge">DataFrame.loc</code> and a named slice.</h2>
+
+<div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'])
+</code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>             gdpPercap_1962  gdpPercap_1967  gdpPercap_1972
+country
+Italy           8243.582340    10022.401310    12269.273780
+Montenegro      4649.593785     5907.850937     7778.414017
+Netherlands    12790.849560    15363.251360    18794.745670
+Norway         13450.401510    16361.876470    18965.055510
+Poland          5338.752143     6557.152776     8006.506993
+</code></pre></div></div>
+
+<p>In the above code, we discover that <strong>slicing using <code class="highlighter-rouge">loc</code> is inclusive at both
+ends</strong>, which differs from <strong>slicing using <code class="highlighter-rouge">iloc</code></strong>, where slicing indicates
+everything up to but not including the final index.</p>
+
+<h2 id="result-of-slicing-can-be-used-in-further-operations">Result of slicing can be used in further operations.</h2>
+
+<ul>
+  <li>Usually don’t just print a slice.</li>
+  <li>All the statistical operators that work on entire dataframes
+work the same way on slices.</li>
+  <li>E.g., calculate max of a slice.</li>
+</ul>
+
+<div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].max())
+</code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gdpPercap_1962    13450.40151
+gdpPercap_1967    16361.87647
+gdpPercap_1972    18965.05551
+dtype: float64
+</code></pre></div></div>
+
+<div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972'].min())
+</code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gdpPercap_1962    4649.593785
+gdpPercap_1967    5907.850937
+gdpPercap_1972    7778.414017
+dtype: float64
+</code></pre></div></div>
+
+<h2 id="use-comparisons-to-select-data-based-on-value">Use comparisons to select data based on value.</h2>
+
+<ul>
+  <li>Comparison is applied element by element.</li>
+  <li>Returns a similarly-shaped dataframe of <code class="highlighter-rouge">True</code> and <code class="highlighter-rouge">False</code>.</li>
+</ul>
+
+<div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Use a subset of data to keep output readable.
+subset = data.loc['Italy':'Poland', 'gdpPercap_1962':'gdpPercap_1972']
+print('Subset of data:\n', subset)
+
+# Which values were greater than 10000 ?
+print('\nWhere are values large?\n', subset &gt; 10000)
+</code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Subset of data:
+             gdpPercap_1962  gdpPercap_1967  gdpPercap_1972
+country
+Italy           8243.582340    10022.401310    12269.273780
+Montenegro      4649.593785     5907.850937     7778.414017
+Netherlands    12790.849560    15363.251360    18794.745670
+Norway         13450.401510    16361.876470    18965.055510
+Poland          5338.752143     6557.152776     8006.506993
+
+Where are values large?
+            gdpPercap_1962 gdpPercap_1967 gdpPercap_1972
+country
+Italy                False           True           True
+Montenegro           False          False          False
+Netherlands           True           True           True
+Norway                True           True           True
+Poland               False          False          False
+</code></pre></div></div>
+
+<h2 id="select-values-or-nan-using-a-boolean-mask">Select values or NaN using a Boolean mask.</h2>
+
+<ul>
+  <li>A frame full of Booleans is sometimes called a <em>mask</em> because of how it can be used.</li>
+</ul>
+
+<div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mask = subset &gt; 10000
+print(subset[mask])
+</code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>             gdpPercap_1962  gdpPercap_1967  gdpPercap_1972
+country
+Italy                   NaN     10022.40131     12269.27378
+Montenegro              NaN             NaN             NaN
+Netherlands     12790.84956     15363.25136     18794.74567
+Norway          13450.40151     16361.87647     18965.05551
+Poland                  NaN             NaN             NaN
+</code></pre></div></div>
+
+<ul>
+  <li>Get the value where the mask is true, and NaN (Not a Number) where it is false.</li>
+  <li>Useful because NaNs are ignored by operations like max, min, average, etc.</li>
+</ul>
+
+<div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(subset[subset &gt; 10000].describe())
+</code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       gdpPercap_1962  gdpPercap_1967  gdpPercap_1972
+count        2.000000        3.000000        3.000000
+mean     13120.625535    13915.843047    16676.358320
+std        466.373656     3408.589070     3817.597015
+min      12790.849560    10022.401310    12269.273780
+25%      12955.737547    12692.826335    15532.009725
+50%      13120.625535    15363.251360    18794.745670
+75%      13285.513523    15862.563915    18879.900590
+max      13450.401510    16361.876470    18965.055510
+</code></pre></div></div>
+
+<h2 id="select-apply-combine-operations">Select-Apply-Combine operations</h2>
+
+<p>Pandas vectorizing methods and grouping operations are features that provide users 
+much flexibility to analyse their data.</p>
+
+<p>For instance, let’s say we want to have a clearer view on how the European countries 
+split themselves according to their GDP.</p>
+
+<ol>
+  <li>We may have a glance by splitting the countries in two groups during the years surveyed,
+those who presented a GDP <em>higher</em> than the European average and those with a <em>lower</em> GDP.</li>
+  <li>We then estimate a <em>wealthy score</em> based on the historical (from 1962 to 2007) values,
+where we account how many times a country has participated in the groups of <em>lower</em> or <em>higher</em> GDP</li>
+</ol>
+
+<div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mask_higher = data.apply(lambda x:x&gt;x.mean())
+wealth_score = mask_higher.aggregate('sum',axis=1)/len(data.columns)
+wealth_score
+</code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>country
+Albania                   0.000000
+Austria                   1.000000
+Belgium                   1.000000
+Bosnia and Herzegovina    0.000000
+Bulgaria                  0.000000
+Croatia                   0.000000
+Czech Republic            0.500000
+Denmark                   1.000000
+Finland                   1.000000
+France                    1.000000
+Germany                   1.000000
+Greece                    0.333333
+Hungary                   0.000000
+Iceland                   1.000000
+Ireland                   0.333333
+Italy                     0.500000
+Montenegro                0.000000
+Netherlands               1.000000
+Norway                    1.000000
+Poland                    0.000000
+Portugal                  0.000000
+Romania                   0.000000
+Serbia                    0.000000
+Slovak Republic           0.000000
+Slovenia                  0.333333
+Spain                     0.333333
+Sweden                    1.000000
+Switzerland               1.000000
+Turkey                    0.000000
+United Kingdom            1.000000
+dtype: float64
+</code></pre></div></div>
+
+<p>Finally, for each group in the <code class="highlighter-rouge">wealth_score</code> table, we sum their (financial) contribution
+across the years surveyed:</p>
+
+<div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data.groupby(wealth_score).sum()
+</code></pre></div></div>
+<div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>          gdpPercap_1952  gdpPercap_1957  gdpPercap_1962  gdpPercap_1967  \
+0.000000    36916.854200    46110.918793    56850.065437    71324.848786   
+0.333333    16790.046878    20942.456800    25744.935321    33567.667670   
+0.500000    11807.544405    14505.000150    18380.449470    21421.846200   
+1.000000   104317.277560   127332.008735   149989.154201   178000.350040   
+
+          gdpPercap_1972  gdpPercap_1977  gdpPercap_1982  gdpPercap_1987  \
+0.000000    88569.346898   104459.358438   113553.768507   119649.599409   
+0.333333    45277.839976    53860.456750    59679.634020    64436.912960   
+0.500000    25377.727380    29056.145370    31914.712050    35517.678220   
+1.000000   215162.343140   241143.412730   263388.781960   296825.131210   
+
+          gdpPercap_1992  gdpPercap_1997  gdpPercap_2002  gdpPercap_2007  
+0.000000    92380.047256   103772.937598   118590.929863   149577.357928  
+0.333333    67918.093220    80876.051580   102086.795210   122803.729520  
+0.500000    36310.666080    40723.538700    45564.308390    51403.028210  
+1.000000   315238.235970   346930.926170   385109.939210   427850.333420
+</code></pre></div></div>
+
+<blockquote class="challenge">
+  <h2 id="selection-of-individual-values">Selection of Individual Values</h2>
+
+  <p>Assume Pandas has been imported into your notebook
+and the Gapminder GDP data for Europe has been loaded:</p>
+
+  <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import pandas
+
+df = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+</code></pre></div>  </div>
+
+  <p>Write an expression to find the Per Capita GDP of Serbia in 2007.</p>
+</blockquote>
+<blockquote class="challenge">
+
+  <blockquote class="solution">
+    <h2 id="solution">Solution</h2>
+    <p>The selection can be done by using the labels for both the row (“Serbia”) and the column (“gdpPercap_2007”):</p>
+    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(df.loc['Serbia', 'gdpPercap_2007'])
+</code></pre></div>    </div>
+    <p>The output is</p>
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>9786.534714
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="extent-of-slicing">Extent of Slicing</h2>
+
+  <ol>
+    <li>Do the two statements below produce the same output?</li>
+    <li>Based on this,
+what rule governs what is included (or not) in numerical slices and named slices in Pandas?</li>
+  </ol>
+
+  <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(data.iloc[0:2, 0:2])
+print(data.loc['Albania':'Belgium', 'gdpPercap_1952':'gdpPercap_1962'])
+</code></pre></div>  </div>
+
+</blockquote>
+<blockquote class="challenge">
+
+  <blockquote class="solution">
+    <h2 id="solution-1">Solution</h2>
+    <p>No, they do not produce the same output! The output of the first statement is:</p>
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        gdpPercap_1952  gdpPercap_1957
+country                                
+Albania     1601.056136     1942.284244
+Austria     6137.076492     8842.598030
+</code></pre></div>    </div>
+    <p>The second statement gives:</p>
+    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>        gdpPercap_1952  gdpPercap_1957  gdpPercap_1962
+country                                                
+Albania     1601.056136     1942.284244     2312.888958
+Austria     6137.076492     8842.598030    10750.721110
+Belgium     8343.105127     9714.960623    10991.206760
+</code></pre></div>    </div>
+    <p>Clearly, the second statement produces an additional column and an additional row compared to the first statement.<br />
+What conclusion can we draw? We see that a numerical slice, 0:2, <em>omits</em> the final index (i.e. index 2)
+in the range provided,
+while a named slice, ‘gdpPercap_1952’:’gdpPercap_1962’, <em>includes</em> the final element.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="reconstructing-data">Reconstructing Data</h2>
+
+  <p>Explain what each line in the following short program does:
+what is in <code class="highlighter-rouge">first</code>, <code class="highlighter-rouge">second</code>, etc.?</p>
+
+  <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>first = pandas.read_csv('data/gapminder_all.csv', index_col='country')
+second = first[first['continent'] == 'Americas']
+third = second.drop('Puerto Rico')
+fourth = third.drop('continent', axis = 1)
+fourth.to_csv('result.csv')
+</code></pre></div>  </div>
+</blockquote>
+<blockquote class="challenge">
+
+  <blockquote class="solution">
+    <h2 id="solution-2">Solution</h2>
+    <p>Let’s go through this piece of code line by line.</p>
+    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>first = pandas.read_csv('data/gapminder_all.csv', index_col='country')
+</code></pre></div>    </div>
+    <p>This line loads the dataset containing the GDP data from all countries into a dataframe called 
+<code class="highlighter-rouge">first</code>. The <code class="highlighter-rouge">index_col='country'</code> parameter selects which column to use as the 
+row labels in the dataframe.</p>
+    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>second = first[first['continent'] == 'Americas']
+</code></pre></div>    </div>
+    <p>This line makes a selection: only those rows of <code class="highlighter-rouge">first</code> for which the ‘continent’ column matches 
+‘Americas’ are extracted. Notice how the Boolean expression inside the brackets, 
+<code class="highlighter-rouge">first['continent'] == 'Americas'</code>, is used to select only those rows where the expression is true. 
+Try printing this expression! Can you print also its individual True/False elements? 
+(hint: first assign the expression to a variable)</p>
+    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>third = second.drop('Puerto Rico')
+</code></pre></div>    </div>
+    <p>As the syntax suggests, this line drops the row from <code class="highlighter-rouge">second</code> where the label is ‘Puerto Rico’. The 
+resulting dataframe <code class="highlighter-rouge">third</code> has one row less than the original dataframe <code class="highlighter-rouge">second</code>.</p>
+    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fourth = third.drop('continent', axis = 1)
+</code></pre></div>    </div>
+    <p>Again we apply the drop function, but in this case we are dropping not a row but a whole column. 
+To accomplish this, we need to specify also the <code class="highlighter-rouge">axis</code> parameter (we want to drop the second column 
+which has index 1).</p>
+    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fourth.to_csv('result.csv')
+</code></pre></div>    </div>
+    <p>The final step is to write the data that we have been working on to a csv file. Pandas makes this easy 
+with the <code class="highlighter-rouge">to_csv()</code> function. The only required argument to the function is the filename. Note that the 
+file will be written in the directory from which you started the Jupyter or Python session.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="selecting-indices">Selecting Indices</h2>
+
+  <p>Explain in simple terms what <code class="highlighter-rouge">idxmin</code> and <code class="highlighter-rouge">idxmax</code> do in the short program below.
+When would you use these methods?</p>
+
+  <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+print(data.idxmin())
+print(data.idxmax())
+</code></pre></div>  </div>
+</blockquote>
+<blockquote class="challenge">
+
+  <blockquote class="solution">
+    <h2 id="solution-3">Solution</h2>
+    <p>For each column in <code class="highlighter-rouge">data</code>, <code class="highlighter-rouge">idxmin</code> will return the index value corresponding to each column’s minimum;
+<code class="highlighter-rouge">idxmax</code> will do accordingly the same for each column’s maximum value.</p>
+
+    <p>You can use these functions whenever you want to get the row index of the minimum/maximum value and not the actual minimum/maximum value.</p>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="practice-with-selection">Practice with Selection</h2>
+
+  <p>Assume Pandas has been imported and the Gapminder GDP data for Europe has been loaded.
+Write an expression to select each of the following:</p>
+
+  <ol>
+    <li>GDP per capita for all countries in 1982.</li>
+    <li>GDP per capita for Denmark for all years.</li>
+    <li>GDP per capita for all countries for years <em>after</em> 1985.</li>
+    <li>GDP per capita for each country in 2007 as a multiple of 
+GDP per capita for that country in 1952.</li>
+  </ol>
+</blockquote>
+<blockquote class="challenge">
+
+  <blockquote class="solution">
+    <h2 id="solution-4">Solution</h2>
+    <p>1:</p>
+    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data['gdpPercap_1982']
+</code></pre></div>    </div>
+
+    <p>2:</p>
+    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data.loc['Denmark',:]
+</code></pre></div>    </div>
+
+    <p>3:</p>
+    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data.loc[:,'gdpPercap_1985':]
+</code></pre></div>    </div>
+    <p>Pandas is smart enough to recognize the number at the end of the column label and does not give you an error, although no column named <code class="highlighter-rouge">gdpPercap_1985</code> actually exists. This is useful if new columns are added to the CSV file later.</p>
+
+    <p>4:</p>
+    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>data['gdpPercap_2007']/data['gdpPercap_1952']
+</code></pre></div>    </div>
+  </blockquote>
+</blockquote>
+
+<blockquote class="challenge">
+  <h2 id="interpretation">Interpretation</h2>
+
+  <p>Poland’s borders have been stable since 1945,
+but changed several times in the years before then.
+How would you handle this if you were creating a table of GDP per capita for Poland
+for the entire twentieth century?</p>
+</blockquote>
+
+
+
+<blockquote class="keypoints">
+  <h2>Key Points</h2>
+  <ul>
+    
+    <li><p>Use <code class="highlighter-rouge">DataFrame.iloc[..., ...]</code> to select values by integer location.</p>
+</li>
+    
+    <li><p>Use <code class="highlighter-rouge">:</code> on its own to mean all columns or all rows.</p>
+</li>
+    
+    <li><p>Select multiple columns or rows using <code class="highlighter-rouge">DataFrame.loc</code> and a named slice.</p>
+</li>
+    
+    <li><p>Result of slicing can be used in further operations.</p>
+</li>
+    
+    <li><p>Use comparisons to select data based on value.</p>
+</li>
+    
+    <li><p>Select values or NaN using a Boolean mask.</p>
+</li>
+    
+  </ul>
+</blockquote>
+
+</article>
+
+<div class="row">
+  <div class="col-xs-1">
+    <h3 class="text-left">
+      
+      <a href="../08-reading-tabular/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      
+    </h3>
+  </div>
+  <div class="col-xs-10">
+    
+  </div>
+  <div class="col-xs-1">
+    <h3 class="text-right">
+      
+      <a href="../10-break/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      
+    </h3>
+  </div>
+</div>
+
+
+      
+      
+<footer>
+  <div class="row">
+    <div class="col-md-6 copyright" align="left">
+	
+	Copyright &copy; 2018–2018
+	<a href="https://carpentries.org/">The Carpentries</a>
+        <br>
+        Copyright &copy; 2016–2018
+	<a href="https://software-carpentry.org">Software Carpentry Foundation</a>
+	
+    </div>
+    <div class="col-md-6 help-links" align="right">
+	
+	<a href="/edit/gh-pages/_episodes/09-data-frames.md">Edit on GitHub</a>
+	
+	/
+	<a href="/blob/gh-pages/CONTRIBUTING.md">Contributing</a>
+	/
+	<a href="/">Source</a>
+	/
+	<a href="/blob/gh-pages/CITATION">Cite</a>
+	/
+	<a href="mailto:team@carpentries.org">Contact</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12" align="center">
+      Using <a href="https://github.com/carpentries/styles/">The Carpentries style</a>
+      version <a href="https://github.com/carpentries/styles/releases/tag/v9.5.2">9.5.2</a>.
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="../assets/js/jquery.min.js"></script>
+<script src="../assets/js/bootstrap.min.js"></script>
+<script src="../assets/js/lesson.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37305346-2', 'auto');
+  ga('send', 'pageview');
+</script>
+
+  </body>
+</html>
