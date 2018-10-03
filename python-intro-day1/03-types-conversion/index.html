@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2018-09-27 21:08:06 -0700">
+    <meta http-equiv="last-modified" content="2018-10-02 21:18:50 -0700">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -431,18 +431,6 @@ How can you find out?</p>
 
   <p>What type of value is 3.25 + 4?</p>
 
-  <blockquote class="solution">
-    <h2 id="solution-1">Solution</h2>
-
-    <p>It is a float:
-integers are automatically converted to floats as necessary.</p>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>result = 3.25 + 4
-print(result, 'is', type(result))
-</code></pre></div>    </div>
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>7.25 is &lt;class 'float'&gt;
-</code></pre></div>    </div>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -460,20 +448,6 @@ would you use to represent each of the following?  Try to come up with more than
     <li>Average population of a city over time.</li>
   </ol>
 
-  <blockquote class="solution">
-    <h2 id="solution-2">Solution</h2>
-
-    <p>The answers to the questions are:</p>
-    <ol>
-      <li>Integer, since the number of days would lie between 1 and 365.</li>
-      <li>Floating point, since fractional days are required</li>
-      <li>Character string if serial number contains letters and numbers, otherwise integer if the serial number consists only of numerals</li>
-      <li>This will vary! How do you define a specimen’s age? whole days since collection (integer)? date and time (string)?</li>
-      <li>Choose floating point to represent population as large aggreates (eg millions), or integer to represent population in units of individuals.</li>
-      <li>Floating point number, since an average is likely to have a fractional part.</li>
-    </ol>
-
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -507,20 +481,6 @@ and <code class="highlighter-rouge">num_per_survey</code> is the number that can
 write an expression that calculates the number of surveys needed
 to reach everyone once.</p>
 
-  <blockquote class="solution">
-    <h2 id="solution-3">Solution</h2>
-    <p>We want the minimum number of surveys that reaches everyone once, which is
-the rounded up value of <code class="highlighter-rouge">num_subjects / num_per_survey</code>. This is 
-equivalent to performing an integer division with <code class="highlighter-rouge">//</code> and adding 1.</p>
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>num_subjects = 600
-num_per_survey = 42
-num_surveys = num_subjects // num_per_survey + 1
-
-print(num_subjects, 'subjects,', num_per_survey, 'per survey:', num_surveys)
-</code></pre></div>    </div>
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>600 subjects, 42 per survey: 15
-</code></pre></div>    </div>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -549,18 +509,16 @@ ValueError                                Traceback (most recent call last)
 
 ValueError: could not convert string to float: 'Hello world!'
 </code></pre></div>  </div>
+  <p><br /></p>
 
-  <p>Given this information, what do you expect the following program to do?</p>
-
-  <p>What does it actually do?</p>
-
-  <p>Why do you think it does that?</p>
+  <p>Given this information, what do you expect the following program to do? 
+[What does it actually do? Why do you think it does that?]</p>
 
   <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print("fractional string to int:", int("3.4"))
 </code></pre></div>  </div>
 
   <blockquote class="solution">
-    <h2 id="solution-4">Solution</h2>
+    <h2 id="solution-1">Solution</h2>
     <p>What do you expect this program to do? It would not be so unreasonable to expect the Python 3 <code class="highlighter-rouge">int</code> command to
 convert the string “3.4” to 3.4 and an additional type conversion to 3. After all, Python 3 performs a lot of other
 magic - isn’t that part of its charm?</p>
@@ -585,13 +543,13 @@ ValueError: invalid literal for int() with base 10: '3.4'
 <blockquote class="challenge">
   <h2 id="arithmetic-with-different-types">Arithmetic with Different Types</h2>
 
-  <p>Which of the following will print 2.0?
-Note: there may be more than one right answer.</p>
-
   <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>first = 1.0
 second = "1"
 third = "1.1"
 </code></pre></div>  </div>
+  <p><br /></p>
+
+  <p><strong>Question:</strong> Which of the following will print 2.0? [Note: There may be more than one right answer!]</p>
 
   <ol>
     <li><code class="highlighter-rouge">first + float(second)</code></li>
@@ -602,11 +560,6 @@ third = "1.1"
     <li><code class="highlighter-rouge">2.0 * second</code></li>
   </ol>
 
-  <blockquote class="solution">
-    <h2 id="solution-5">Solution</h2>
-
-    <p>Answer: 1 and 4</p>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -620,22 +573,10 @@ as <code class="highlighter-rouge">val.real</code> and <code class="highlighter-
 
   <ol>
     <li>Why do you think Python uses <code class="highlighter-rouge">j</code> instead of <code class="highlighter-rouge">i</code> for the imaginary part?</li>
-    <li>What do you expect <code class="highlighter-rouge">1+2j + 3</code> to produce?</li>
-    <li>What do you expect ‘4j’ to be?  What about <code class="highlighter-rouge">4 j</code> or `4 + j’? &gt;</li>
+    <li>What do you expect <code class="highlighter-rouge">1 + 2j + 3</code> to produce?</li>
+    <li>What do you expect <code class="highlighter-rouge">4j</code> to be?  What about <code class="highlighter-rouge">4 j</code> or <code class="highlighter-rouge">4 + j</code>?</li>
   </ol>
 
-  <blockquote class="solution">
-    <h2 id="solution-6">Solution</h2>
-
-    <ol>
-      <li>Standard mathematics treatments typically use <code class="highlighter-rouge">i</code> to denote an imaginary number. However, from media reports it
-was an early convention established from electrical engineering that now presents a technically expensive area to
-change. <a href="http://stackoverflow.com/questions/24812444/why-are-complex-numbers-in-python-denoted-with-j-instead-of-i">Stack Overflow provides additional explanation and
-discussion</a></li>
-      <li><em>4+2j</em></li>
-      <li><em>4j, syntax error, depends on the value of j</em></li>
-    </ol>
-  </blockquote>
 </blockquote>
 
 
