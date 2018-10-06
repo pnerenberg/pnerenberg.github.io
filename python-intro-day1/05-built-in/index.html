@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2018-10-05 19:08:25 -0700">
+    <meta http-equiv="last-modified" content="2018-10-05 19:35:49 -0700">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -457,30 +457,6 @@ poor = "tin"
 print(max(rich, poor))
 print(max(len(rich), len(poor)))
 </code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution">Solution</h2>
-    <ol class="python">
-      <li>
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(max(easy_string))
-</code></pre></div>        </div>
-      </li>
-    </ol>
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c
-</code></pre></div>    </div>
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(max(rich, poor))
-</code></pre></div>    </div>
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tin
-</code></pre></div>    </div>
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(max(len(rich), len(poor)))
-</code></pre></div>    </div>
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4
-</code></pre></div>    </div>
-
-    <ol>
-      <li>It throws a TypeError. The command is trying to run <code class="highlighter-rouge">max(4, 'tin')</code> and you can’t compare
-a string and an integer</li>
-    </ol>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -489,7 +465,7 @@ a string and an integer</li>
   <p>Why don’t <code class="highlighter-rouge">max</code> and <code class="highlighter-rouge">min</code> return <code class="highlighter-rouge">None</code> when they are given no arguments?</p>
 
   <blockquote class="solution">
-    <h2 id="solution-1">Solution</h2>
+    <h2 id="solution">Solution</h2>
     <p><code class="highlighter-rouge">max</code> and <code class="highlighter-rouge">min</code> return TypeErrors in this case because the correct number of parameters
 was not supplied. If it just returned <code class="highlighter-rouge">None</code>, the error would be much harder to trace as it
 would likely be stored into a variable and used later in the program, only to likely throw
