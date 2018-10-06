@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2018-10-02 21:18:50 -0700">
+    <meta http-equiv="last-modified" content="2018-10-05 19:08:25 -0700">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -367,23 +367,6 @@ since readers must learn your program’s aliases.</li>
     <li>Since the library contains this function, why does <code class="highlighter-rouge">sqrt</code> exist?</li>
   </ol>
 
-  <blockquote class="solution">
-    <h2 id="solution">Solution</h2>
-    <ol>
-      <li>Using <code class="highlighter-rouge">help(math)</code> we see that we’ve got <code class="highlighter-rouge">pow(x,y)</code> in addition to <code class="highlighter-rouge">sqrt(x)</code>,
-so we could use <code class="highlighter-rouge">pow(x, 0.5)</code> to find a square root.</li>
-      <li>
-        <p>The <code class="highlighter-rouge">sqrt(x)</code> function is arguably more readable than <code class="highlighter-rouge">pow(x, 0.5)</code> when
-implementing equations. Readability is a cornerstone of good programming, so it
-makes sense to provide a special function for this specific common case.</p>
-
-        <p>Also, the design of Python’s <code class="highlighter-rouge">math</code> library has its origin in the C standard,
-which includes both <code class="highlighter-rouge">sqrt(x)</code> and <code class="highlighter-rouge">pow(x,y)</code>, so a little bit of the history
-of programming is showing in Python’s function names.</p>
-      </li>
-    </ol>
-
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -401,7 +384,7 @@ of programming is showing in Python’s function names.</p>
   </ol>
 
   <blockquote class="solution">
-    <h2 id="solution-1">Solution</h2>
+    <h2 id="solution">Solution</h2>
 
     <p>The <a href="randommod">random module</a> seems like it could help you.</p>
 
@@ -454,18 +437,6 @@ ___ = len(bases)
 print("random base ", bases[___], "base index", ___)
 </code></pre></div>  </div>
 
-  <blockquote class="solution">
-    <h2 id="solution-2">Solution</h2>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import math 
-import random
-bases = "ACTTGCTTGAC" 
-n_bases = len(bases)
-idx = random.randrange(n_bases)
-print("random base", bases[idx], "base index", idx)
-</code></pre></div>    </div>
-
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -480,7 +451,7 @@ Python reports an error:</p>
   <p>What has your colleague forgotten to do?</p>
 
   <blockquote class="solution">
-    <h2 id="solution-3">Solution</h2>
+    <h2 id="solution-1">Solution</h2>
 
     <p>Importing the math module (<code class="highlighter-rouge">import math</code>)</p>
   </blockquote>
@@ -500,27 +471,6 @@ angle = ____.degrees(____.pi / 2)
 print(____)
 </code></pre></div>  </div>
 
-  <blockquote class="solution">
-    <h2 id="solution-4">Solution</h2>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import math as m
-angle = m.degrees(m.pi / 2)
-print(angle)
-</code></pre></div>    </div>
-
-    <p>can bewritten as</p>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import math
-angle = math.degrees(math.pi / 2)
-print(angle)
-</code></pre></div>    </div>
-
-    <p>Since you just wrote the code and are familiar with it, you might actually
-find the first version easier to read. But when trying to read a huge piece
-of code written by someone else, or when getting back to your own huge piece
-of code after several months, non-abbreviated names are often easier, except
-where there are clear abbreviation conventions.</p>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -546,7 +496,7 @@ where there are clear abbreviation conventions.</p>
   </ol>
 
   <blockquote class="solution">
-    <h2 id="solution-5">Solution</h2>
+    <h2 id="solution-2">Solution</h2>
 
     <ol>
       <li>Library calls 1 and 4. In order to directly refer to <code class="highlighter-rouge">sin</code> and <code class="highlighter-rouge">pi</code> without
@@ -577,20 +527,6 @@ angle = degrees(pi / 2)
 print(angle)
 </code></pre></div>  </div>
 
-  <blockquote class="solution">
-    <h2 id="solution-6">Solution</h2>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>from math import degrees, pi
-angle = degrees(pi / 2)
-print(angle)
-</code></pre></div>    </div>
-
-    <p>Most likely you find this version easier to read since it’s less dense.
-The main reason not to use this form of import is to avoid name clashes.
-For instance, you wouldn’t import <code class="highlighter-rouge">degrees</code> this way if you also wanted to
-use the name <code class="highlighter-rouge">degrees</code> for a variable or function of your own. Or if you
-were to also import a function named <code class="highlighter-rouge">degrees</code> from another library.</p>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -606,7 +542,7 @@ log(0)
 </code></pre></div>  </div>
 
   <blockquote class="solution">
-    <h2 id="solution-7">Solution</h2>
+    <h2 id="solution-3">Solution</h2>
 
     <ol>
       <li>The logarithm of <code class="highlighter-rouge">x</code> is only defined for <code class="highlighter-rouge">x &gt; 0</code>, so 0 is outside the

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2018-10-02 21:18:50 -0700">
+    <meta http-equiv="last-modified" content="2018-10-05 19:08:25 -0700">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -439,18 +439,6 @@ when is each function called, etc.</li>
   <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>radiance = 1.0
 radiance = max(2.1, 2.0 + min(radiance, 1.1 * radiance - 0.5))
 </code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution">Solution</h2>
-    <p>1.</p>
-    <ol>
-      <li><code class="highlighter-rouge">1.1 * radiance = 1.1</code></li>
-      <li><code class="highlighter-rouge">1.1 - 0.5 = 0.6</code></li>
-      <li><code class="highlighter-rouge">min(randiance, 0.6) = 0.6</code></li>
-      <li><code class="highlighter-rouge">2.0 + 0.6 = 2.6</code></li>
-      <li><code class="highlighter-rouge">max(2.1, 2.6) = 2.6</code></li>
-      <li>At the end, <code class="highlighter-rouge">radiance = 2.6</code></li>
-    </ol>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -470,7 +458,7 @@ print(max(rich, poor))
 print(max(len(rich), len(poor)))
 </code></pre></div>  </div>
   <blockquote class="solution">
-    <h2 id="solution-1">Solution</h2>
+    <h2 id="solution">Solution</h2>
     <ol class="python">
       <li>
         <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print(max(easy_string))
@@ -501,7 +489,7 @@ a string and an integer</li>
   <p>Why don’t <code class="highlighter-rouge">max</code> and <code class="highlighter-rouge">min</code> return <code class="highlighter-rouge">None</code> when they are given no arguments?</p>
 
   <blockquote class="solution">
-    <h2 id="solution-2">Solution</h2>
+    <h2 id="solution-1">Solution</h2>
     <p><code class="highlighter-rouge">max</code> and <code class="highlighter-rouge">min</code> return TypeErrors in this case because the correct number of parameters
 was not supplied. If it just returned <code class="highlighter-rouge">None</code>, the error would be much harder to trace as it
 would likely be stored into a variable and used later in the program, only to likely throw
@@ -517,11 +505,6 @@ and <code class="highlighter-rouge">len</code> returns the number of characters 
 what index expression will get the last character in the string <code class="highlighter-rouge">name</code>?
 (Note: we will see a simpler way to do this in a later episode.)</p>
 
-  <blockquote class="solution">
-    <h2 id="solution-3">Solution</h2>
-
-    <p><code class="highlighter-rouge">name[len(name) - 1]</code></p>
-  </blockquote>
 </blockquote>
 
 
