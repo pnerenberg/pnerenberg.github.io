@@ -263,7 +263,7 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_GDP_oceania.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_oceania.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
 
 <span class="c"># Extract year from last 4 characters of each column name</span>
 <span class="n">years</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'GDPPercap_'</span><span class="p">)</span>
@@ -273,7 +273,7 @@
 <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'Australia'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_GDP_australia.png" alt="GDP plot for Australia" /></p>
+<p><img src="../fig/9_gdp_australia.png" alt="GDP plot for Australia" /></p>
 <h2 id="select-and-transform-data-then-plot-it">Select and transform data, then plot it.</h2>
 
 <ul>
@@ -285,7 +285,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'GDP per capita'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_GDP_australia_nz.png" alt="GDP plot for Australia and New Zealand" /></p>
+<p><img src="../fig/9_gdp_australia_nz.png" alt="GDP plot for Australia and New Zealand" /></p>
 <h2 id="many-styles-of-plot-are-available">Many styles of plot are available.</h2>
 
 <ul>
@@ -297,7 +297,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'GDP per capita'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_GDP_bar.png" alt="GDP barplot for Australia" /></p>
+<p><img src="../fig/9_gdp_bar.png" alt="GDP barplot for Australia" /></p>
 
 <h2 id="data-can-also-be-plotted-by-calling-the-matplotlib-plot-function-directly">Data can also be plotted by calling the <code class="highlighter-rouge">matplotlib</code> <code class="highlighter-rouge">plot</code> function directly.</h2>
 <ul>
@@ -313,7 +313,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">GDP_australia</span><span class="p">,</span> <span class="s">'g--'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_GDP_australia_formatted.png" alt="GDP formatted plot for Australia" /></p>
+<p><img src="../fig/9_gdp_australia_formatted.png" alt="GDP formatted plot for Australia" /></p>
 
 <h2 id="can-plot-many-sets-of-data-together">Can plot many sets of data together.</h2>
 
@@ -331,7 +331,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'GDP per capita ($)'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_GDP_australia_nz_formatted.png" alt="GDP formatted plot for Australia and New Zealand" /></p>
+<p><img src="../fig/9_gdp_australia_nz_formatted.png" alt="GDP formatted plot for Australia and New Zealand" /></p>
 <ul>
   <li>Plot a scatter plot correlating the GDP of Australia and New Zealand</li>
   <li>Use either <code class="highlighter-rouge">plt.scatter</code> or <code class="highlighter-rouge">DataFrame.plot.scatter</code></li>
@@ -340,11 +340,11 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">GDP_australia</span><span class="p">,</span> <span class="n">GDP_nz</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_GDP_correlation_plt.png" alt="GDP correlation using plt.scatter" /></p>
+<p><img src="../fig/9_gdp_correlation_plt.png" alt="GDP correlation using plt.scatter" /></p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">'Australia'</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s">'New Zealand'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_GDP_correlation_data.png" alt="GDP correlation using data.T.plot.scatter" /></p>
+<p><img src="../fig/9_gdp_correlation_data.png" alt="GDP correlation using data.T.plot.scatter" /></p>
 <blockquote class="challenge">
   <h2 id="minima-and-maxima">Minima and Maxima</h2>
 
@@ -352,7 +352,7 @@
 for all the countries in Europe.
 Modify it again to plot the maximum GDP per capita over time for Europe.</p>
 
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_europe</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_GDP_europe.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_europe</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_europe.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
 <span class="n">data_europe</span><span class="o">.</span><span class="n">____</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s">'min'</span><span class="p">)</span>
 <span class="n">data_europe</span><span class="o">.</span><span class="n">____</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">'best'</span><span class="p">)</span>
@@ -369,7 +369,7 @@ the relationship between the minimum and maximum GDP per capita
 among the countries in Asia for each year in the data set.
 What relationship do you see (if any)?</p>
 
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_asia</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_GDP_asia.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_asia</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_asia.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
 <span class="n">data_asia</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'scatter'</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s">'min'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'max'</span><span class="p">)</span>
 </code></pre></div>  </div>
 
@@ -377,7 +377,7 @@ What relationship do you see (if any)?</p>
 that of the minimum.  Take a look at the maximum GDP over time, as well as 
 the min/max indices.  What do you find out?</p>
 
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_asia</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_GDP_asia.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_asia</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_asia.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
 <span class="n">data_asia</span><span class="o">.</span><span class="nb">max</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">data_asia</span><span class="o">.</span><span class="n">idxmax</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="n">data_asia</span><span class="o">.</span><span class="n">idxmin</span><span class="p">())</span>
