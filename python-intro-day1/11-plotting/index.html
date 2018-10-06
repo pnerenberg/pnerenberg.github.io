@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2018-10-05 19:08:25 -0700">
+    <meta http-equiv="last-modified" content="2018-10-05 19:17:23 -0700">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -263,17 +263,17 @@
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_oceania.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_GDP_oceania.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
 
 <span class="c"># Extract year from last 4 characters of each column name</span>
-<span class="n">years</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'gdpPercap_'</span><span class="p">)</span>
+<span class="n">years</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'GDPPercap_'</span><span class="p">)</span>
 <span class="c"># Convert year values to integers, saving results back to dataframe</span>
 <span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">years</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
 <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'Australia'</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_gdp_australia.png" alt="GDP plot for Australia" /></p>
+<p><img src="../fig/9_GDP_australia.png" alt="GDP plot for Australia" /></p>
 <h2 id="select-and-transform-data-then-plot-it">Select and transform data, then plot it.</h2>
 
 <ul>
@@ -285,7 +285,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'GDP per capita'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_gdp_australia_nz.png" alt="GDP plot for Australia and New Zealand" /></p>
+<p><img src="../fig/9_GDP_australia_nz.png" alt="GDP plot for Australia and New Zealand" /></p>
 <h2 id="many-styles-of-plot-are-available">Many styles of plot are available.</h2>
 
 <ul>
@@ -297,7 +297,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'GDP per capita'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_gdp_bar.png" alt="GDP barplot for Australia" /></p>
+<p><img src="../fig/9_GDP_bar.png" alt="GDP barplot for Australia" /></p>
 
 <h2 id="data-can-also-be-plotted-by-calling-the-matplotlib-plot-function-directly">Data can also be plotted by calling the <code class="highlighter-rouge">matplotlib</code> <code class="highlighter-rouge">plot</code> function directly.</h2>
 <ul>
@@ -308,22 +308,22 @@
 <h2 id="get-australia-data-from-dataframe">Get Australia data from dataframe</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">years</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span>
-<span class="n">gdp_australia</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'Australia'</span><span class="p">]</span>
+<span class="n">GDP_australia</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'Australia'</span><span class="p">]</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">gdp_australia</span><span class="p">,</span> <span class="s">'g--'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">GDP_australia</span><span class="p">,</span> <span class="s">'g--'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_gdp_australia_formatted.png" alt="GDP formatted plot for Australia" /></p>
+<p><img src="../fig/9_GDP_australia_formatted.png" alt="GDP formatted plot for Australia" /></p>
 
 <h2 id="can-plot-many-sets-of-data-together">Can plot many sets of data together.</h2>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Select two countries' worth of data.</span>
-<span class="n">gdp_australia</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'Australia'</span><span class="p">]</span>
-<span class="n">gdp_nz</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'New Zealand'</span><span class="p">]</span>
+<span class="n">GDP_australia</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'Australia'</span><span class="p">]</span>
+<span class="n">GDP_nz</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s">'New Zealand'</span><span class="p">]</span>
 
 <span class="c"># Plot with differently-colored markers.</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">gdp_australia</span><span class="p">,</span> <span class="s">'b-'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'Australia'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">gdp_nz</span><span class="p">,</span> <span class="s">'g-'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'New Zealand'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">GDP_australia</span><span class="p">,</span> <span class="s">'b-'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'Australia'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">years</span><span class="p">,</span> <span class="n">GDP_nz</span><span class="p">,</span> <span class="s">'g-'</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s">'New Zealand'</span><span class="p">)</span>
 
 <span class="c"># Create legend.</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">'upper left'</span><span class="p">)</span>
@@ -331,20 +331,20 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'GDP per capita ($)'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_gdp_australia_nz_formatted.png" alt="GDP formatted plot for Australia and New Zealand" /></p>
+<p><img src="../fig/9_GDP_australia_nz_formatted.png" alt="GDP formatted plot for Australia and New Zealand" /></p>
 <ul>
   <li>Plot a scatter plot correlating the GDP of Australia and New Zealand</li>
   <li>Use either <code class="highlighter-rouge">plt.scatter</code> or <code class="highlighter-rouge">DataFrame.plot.scatter</code></li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">gdp_australia</span><span class="p">,</span> <span class="n">gdp_nz</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">GDP_australia</span><span class="p">,</span> <span class="n">GDP_nz</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_gdp_correlation_plt.png" alt="GDP correlation using plt.scatter" /></p>
+<p><img src="../fig/9_GDP_correlation_plt.png" alt="GDP correlation using plt.scatter" /></p>
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">'Australia'</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s">'New Zealand'</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p><img src="../fig/9_gdp_correlation_data.png" alt="GDP correlation using data.T.plot.scatter" /></p>
+<p><img src="../fig/9_GDP_correlation_data.png" alt="GDP correlation using data.T.plot.scatter" /></p>
 <blockquote class="challenge">
   <h2 id="minima-and-maxima">Minima and Maxima</h2>
 
@@ -352,24 +352,13 @@
 for all the countries in Europe.
 Modify it again to plot the maximum GDP per capita over time for Europe.</p>
 
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_europe</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_europe.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_europe</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_GDP_europe.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
 <span class="n">data_europe</span><span class="o">.</span><span class="n">____</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s">'min'</span><span class="p">)</span>
 <span class="n">data_europe</span><span class="o">.</span><span class="n">____</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">'best'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
 </code></pre></div>  </div>
 
-  <blockquote class="solution">
-    <h2 id="solution">Solution</h2>
-
-    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_europe</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_europe.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
-<span class="n">data_europe</span><span class="o">.</span><span class="nb">min</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s">'min'</span><span class="p">)</span>
-<span class="n">data_europe</span><span class="o">.</span><span class="nb">max</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s">'max'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s">'best'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-</code></pre></div>    </div>
-    <p><img src="../fig/9_minima_maxima_solution.png" alt="Minima Maxima Solution" /></p>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -380,39 +369,20 @@ the relationship between the minimum and maximum GDP per capita
 among the countries in Asia for each year in the data set.
 What relationship do you see (if any)?</p>
 
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_asia</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_asia.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_asia</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_GDP_asia.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
 <span class="n">data_asia</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'scatter'</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s">'min'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'max'</span><span class="p">)</span>
 </code></pre></div>  </div>
 
-  <blockquote class="solution">
-    <h2 id="solution-1">Solution</h2>
+  <p>You might note that the variability in the maximum GDP is much higher than
+that of the minimum.  Take a look at the maximum GDP over time, as well as 
+the min/max indices.  What do you find out?</p>
 
-    <p><img src="../fig/9_correlations_solution1.png" alt="Correlations Solution 1" /></p>
-
-    <p>No particular correlations can be seen between the minimum and maximum gdp values
-year on year. It seems the fortunes of asian countries do not rise and fall together.</p>
-
-  </blockquote>
-
-  <p>You might note that the variability in the maximum is much higher than
-that of the minimum.  Take a look at the maximum and the max indexes:</p>
-
-  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_asia</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_asia.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
+  <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_asia</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_GDP_asia.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
 <span class="n">data_asia</span><span class="o">.</span><span class="nb">max</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="k">print</span><span class="p">(</span><span class="n">data_asia</span><span class="o">.</span><span class="n">idxmax</span><span class="p">())</span>
 <span class="k">print</span><span class="p">(</span><span class="n">data_asia</span><span class="o">.</span><span class="n">idxmin</span><span class="p">())</span>
 </code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution-2">Solution</h2>
-    <p><img src="../fig/9_correlations_solution2.png" alt="Correlations Solution 2" /></p>
 
-    <p>Seems the variability in this value is due to a sharp drop after 1972.
-Some geopolitics at play perhaps? Given the dominance of oil producing countries,
-maybe the Brent crude index would make an interesting comparison?
-Whilst Myanmar consistently has the lowest GDP, the highest GDP nation has varied
-more notably.</p>
-
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -423,7 +393,7 @@ the correlation between GDP and life expectancy for 2007,
 normalizing marker size by population:</p>
 
   <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_all</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_all.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
-<span class="n">data_all</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'scatter'</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s">'gdpPercap_2007'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'lifeExp_2007'</span><span class="p">,</span>
+<span class="n">data_all</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'scatter'</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s">'GDPPercap_2007'</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s">'lifeExp_2007'</span><span class="p">,</span>
               <span class="n">s</span><span class="o">=</span><span class="n">data_all</span><span class="p">[</span><span class="s">'pop_2007'</span><span class="p">]</span><span class="o">/</span><span class="mf">1e6</span><span class="p">)</span>
 </code></pre></div>  </div>
 
