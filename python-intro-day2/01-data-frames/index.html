@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2018-10-11 21:39:22 -0700">
+    <meta http-equiv="last-modified" content="2018-10-17 21:37:42 -0700">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -196,7 +196,7 @@
     <div class="col-md-3">
       <strong>Teaching:</strong> 5 min
       <br/>
-      <strong>Exercises:</strong> 10 min
+      <strong>Exercises:</strong> 15 min
     </div>
     <div class="col-md-9">
       <strong>Questions</strong>
@@ -225,23 +225,23 @@
 
 </blockquote>
 
-<h2 id="two-quick-exercises">Two Quick Exercises!</h2>
-
 <blockquote class="challenge">
+  <h2 id="three-quick-exercises">Three Quick Exercises</h2>
   <p>Assume Pandas has been imported into your notebook
-and the Gapminder GDP data for Europe has been loaded:</p>
+and the Gapminder GDP data for Africa has been loaded:</p>
 
   <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import pandas
 
-df = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')
+AfricaGDP = pandas.read_csv('data/gapminder_gdp_africa.csv', index_col='country')
 </code></pre></div>  </div>
 
-  <p>Write an expression to find the FILL IN HERE.</p>
-
-</blockquote>
-
-<blockquote class="challenge">
-  <p>AND WRITE ANOTHER QUICK CHALLENGE HERE</p>
+  <p>Write code to:</p>
+  <ol>
+    <li>Print out summary statistics of these data.</li>
+    <li>Determine how many countries had a per-capita GDP in 1997 that was greater than $1000.</li>
+    <li>Compute the ratio of per-capita GDP in 2007 to per-capita GDP in 1977, 
+but only for countries where the per-capita GDP in 1977 was greater than $1000.</li>
+  </ol>
 
 </blockquote>
 
