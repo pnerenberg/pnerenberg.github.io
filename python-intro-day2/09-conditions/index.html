@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2018-10-17 21:37:42 -0700">
+    <meta http-equiv="last-modified" content="2018-10-19 13:59:23 -0700">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -462,12 +462,6 @@ elif pressure &lt;= 50.0:
 print(pressure)
 </code></pre></div>  </div>
 
-  <blockquote class="solution">
-    <h2 id="solution">Solution</h2>
-
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>25.0
-</code></pre></div>    </div>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -489,19 +483,6 @@ print(result)
 
   <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[0, 1, 1, 1, 0, 1]
 </code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution-1">Solution</h2>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>original = [-1.5, 0.2, 0.4, 0.0, -1.3, 0.4]
-result = []
-for value in original:
-    if value&lt;0.0:
-        result.append(0)
-    else:
-        result.append(1)
-print(result)
-</code></pre></div>    </div>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -516,17 +497,6 @@ for filename in glob.glob('data/*.csv'):
     ____:
         print(filename, len(contents))
 </code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution-2">Solution</h2>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import glob
-import pandas
-for filename in glob.glob('data/*.csv'):
-    contents = pandas.read_csv(filename)
-    if len(contents)&lt;50:
-        print(filename, len(contents))
-</code></pre></div>    </div>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -548,20 +518,6 @@ print(smallest, largest)
 
   <p>What are the advantages and disadvantages of using this method
 to find the range of the data?</p>
-  <blockquote class="solution">
-    <h2 id="solution-3">Solution</h2>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>values = [-2,1,65,78,-54,-24,100]
-smallest, largest = None, None
-for v in values:
-    if smallest==None and largest==None:
-        smallest, largest = v, v
-    else:
-        smallest = min(smallest, v)
-        largest = max(largest, v)
-print(smallest, largest)
-</code></pre></div>    </div>
-  </blockquote>
 </blockquote>
 
 <blockquote class="callout">

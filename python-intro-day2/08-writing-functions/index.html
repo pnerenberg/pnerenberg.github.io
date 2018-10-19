@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2018-10-17 21:37:42 -0700">
+    <meta http-equiv="last-modified" content="2018-10-19 13:59:23 -0700">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -196,7 +196,7 @@
     <div class="col-md-3">
       <strong>Teaching:</strong> 10 min
       <br/>
-      <strong>Exercises:</strong> 20 min
+      <strong>Exercises:</strong> 30 min
     </div>
     <div class="col-md-9">
       <strong>Questions</strong>
@@ -385,15 +385,6 @@ Is it a <code class="highlighter-rouge">SyntaxError</code> or an <code class="hi
   print("So they are usually not too hard to fix.")
 </code></pre></div>  </div>
 
-  <blockquote class="solution">
-    <h2 id="solution">Solution</h2>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def another_function():
-  print("Syntax errors are annoying.")
-  print("But at least Python tells us about them!")
-  print("So they are usually not too hard to fix.")
-</code></pre></div>    </div>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -407,7 +398,7 @@ Is it a <code class="highlighter-rouge">SyntaxError</code> or an <code class="hi
 print('calling', report, 22.5)
 </code></pre></div>  </div>
   <blockquote class="solution">
-    <h2 id="solution-1">Solution</h2>
+    <h2 id="solution">Solution</h2>
 
     <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>calling &lt;function report at 0x7fd128ff1bf8&gt; 22.5
 </code></pre></div>    </div>
@@ -444,7 +435,7 @@ def print_date(year, month, day):
 </code></pre></div>  </div>
 
   <blockquote class="solution">
-    <h2 id="solution-2">Solution</h2>
+    <h2 id="solution-1">Solution</h2>
 
     <ol>
       <li>The first line of output (<code class="highlighter-rouge">1871/3/19</code>) is from the print function inside <code class="highlighter-rouge">print_date()</code>, while the second line
@@ -469,16 +460,6 @@ def min_in_data(____):
     data = ____
     return ____
 </code></pre></div>  </div>
-  <blockquote class="python solution">
-    <h2 id="solution-3">Solution</h2>
-
-    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import pandas
-
-def min_in_data(filename):
-    data = pandas.read_csv(filename)
-    return data.min()
-</code></pre></div>    </div>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -493,21 +474,6 @@ What does your function do if the list is empty?</p>
         if ____:
             return ____
 </code></pre></div>  </div>
-  <blockquote class="solution">
-    <h2 id="solution-4">Solution</h2>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def first_negative(values):
-    for v in values:
-        if v&lt;0:
-            return v
-</code></pre></div>    </div>
-    <p>If an empty list is passed to this function, it returns <code class="highlighter-rouge">None</code>:</p>
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>my_list = []
-print(first_negative(my_list)
-</code></pre></div>    </div>
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>None
-</code></pre></div>    </div>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -515,36 +481,26 @@ print(first_negative(my_list)
 
   <p>Earlier we saw this function:</p>
 
-  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def print_date(year, month, day):
+  <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def print_date(year, month, day):
     joined = str(year) + '/' + str(month) + '/' + str(day)
     print(joined)
 </code></pre></div>  </div>
+
   <p>We saw that we can call the function using <em>named arguments</em>, like this:</p>
   <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>print_date(day=1, month=2, year=2003)
 </code></pre></div>  </div>
 
-  <ol class="python">
+  <h3 id="questions">Questions</h3>
+  <ol>
     <li>What does <code class="highlighter-rouge">print_date(day=1, month=2, year=2003)</code> print?</li>
     <li>When have you seen a function call like this before?</li>
     <li>When and why is it useful to call functions this way?</li>
   </ol>
-  <blockquote class="solution">
-    <h2 id="solution-5">Solution</h2>
 
-    <ol>
-      <li><code class="highlighter-rouge">2003/2/1</code></li>
-      <li>We saw examples of using <em>named arguments</em> when working with the pandas library. For example, when reading in a dataset 
-using <code class="highlighter-rouge">data = pandas.read_csv('data/gapminder_gdp_europe.csv', index_col='country')</code>, the last argument <code class="highlighter-rouge">index_col</code> is a 
-named argument.</li>
-      <li>Using named arguments can make code more readable since one can see from the function call what name the different arguments 
-have inside the function. It can also reduce the chances of passing arguments in the wrong order, since by using named arguments 
-the order doesn’t matter.</li>
-    </ol>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
-  <h2 id="encapsulate-of-ifprint-block">Encapsulate of If/Print Block</h2>
+  <h2 id="encapsulating-ifprint-block">Encapsulating If/Print Block</h2>
 
   <p>The code below will run on a label-printer for chicken eggs.  A digital scale will report a chicken egg mass (in grams) to the computer and then the computer will print a label.</p>
 
@@ -570,10 +526,14 @@ the order doesn’t matter.</li>
        print("small")
 </code></pre></div>  </div>
 
-  <p>The simplified program  follows.  What function definition will make it functional?</p>
+  <p><br />
+The simplified program follows.  What function definition will make it functional?</p>
 
   <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code> # revised version
  import random
+ 
+ ### YOUR CODE HERE ###
+
  for i in range(10):
 
     # simulating the mass of a chicken egg
@@ -589,28 +549,9 @@ the order doesn’t matter.</li>
     <li>A dirty egg might have a mass of more than 90 grams, and a spoiled or broken egg will probably have a mass that’s less than 50 grams.  Modify your <code class="highlighter-rouge">print_egg_label()</code> function to account for these error conditions. Sample output could be <code class="highlighter-rouge">25 too light, probably spoiled</code>.</li>
   </ol>
 
-  <blockquote class="solution">
-    <h2 id="solution-6">Solution</h2>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def print_egg_label(mass):
-    #egg sizing machinery prints a label
-    if(mass&gt;=90):
-        return("warning: egg might be dirty")
-    elif(mass&gt;=85):
-        return("jumbo")
-    elif(mass&gt;=70):
-        return("large")
-    elif(mass&lt;70 and mass&gt;=55):
-        return("medium")
-    elif(mass&lt;50):
-        return("too light, probably spoiled")
-    else:
-        return("small")
-</code></pre></div>    </div>
-  </blockquote>
 </blockquote>
 
-<blockquote>
+<blockquote class="challenge">
   <h2 id="encapsulating-data-analysis">Encapsulating Data Analysis</h2>
 
   <p>Assume that the following code has been executed:</p>
@@ -621,7 +562,8 @@ df = pandas.read_csv('data/gapminder_gdp_asia.csv', index_col=0)
 japan = df.loc['Japan']
 </code></pre></div>  </div>
 
-  <p>1.Complete the statements below to obtain the average GDP for Japan
+  <h3 id="exercise-1">Exercise 1</h3>
+  <p>Complete the statements below to obtain the average GDP for Japan
 across the years reported for the 1980s.</p>
 
   <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>year = 1983
@@ -629,7 +571,8 @@ gdp_decade = 'gdpPercap_' + str(year // ____)
 avg = (japan.loc[gdp_decade + ___] + japan.loc[gdp_decade + ___]) / 2
 </code></pre></div>  </div>
 
-  <p>2.Abstract the code above into a single function.</p>
+  <h3 id="exercise-2">Exercise 2</h3>
+  <p>Abstract the code above into a single function.</p>
 
   <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def avg_gdp_in_decade(country, continent, year):
     df = pandas.read_csv('data/gapminder_gdp_'+___+'.csv',delimiter=',',index_col=0)
@@ -639,56 +582,14 @@ avg = (japan.loc[gdp_decade + ___] + japan.loc[gdp_decade + ___]) / 2
     return avg
 </code></pre></div>  </div>
 
-  <p>3.How would you generalize this function
-   if you did not know beforehand which specific years occurred as columns in the data?
-   For instance, what if we also had data from years ending in 1 and 9 for each decade?
-   (Hint: use the columns to filter out the ones that correspond to the decade,
-   instead of enumerating them in the code.)</p>
+  <h3 id="advanced-exercise">Advanced exercise</h3>
 
-  <blockquote class="solution">
-    <h2 id="solution-7">Solution</h2>
+  <p>How would you generalize this function if you did not know beforehand 
+which specific years occurred as columns in the data?
+For instance, what if we also had data from years ending in 1 and 9 for each decade?
+(Hint: Use the columns to filter out the ones that correspond to the decade,
+instead of enumerating them in the code.)</p>
 
-    <p>1.</p>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>year = 1983
-gdp_decade = 'gdpPercap_' + str(year // 10)
-avg = (japan.loc[gdp_decade + '2'] + japan.loc[gdp_decade + '7']) / 2
-</code></pre></div>    </div>
-
-    <p>2.</p>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def avg_gdp_in_decade(country, continent, year):
-    df = pandas.read_csv('data/gapminder_gdp_' + continent + '.csv', index_col=0)
-    c = df.loc[country]
-    gdp_decade = 'gdpPercap_' + str(year // 10)
-    avg = (c.loc[gdp_decade + '2'] + c.loc[gdp_decade + '7'])/2
-    return avg
-</code></pre></div>    </div>
-
-    <p>3.</p>
-
-    <p>We need to loop over the reported years
-   to obtain the average for the relevant ones in the data.</p>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def avg_gdp_in_decade(country, continent, year):
-    df = pandas.read_csv('data/gapminder_gdp_' + continent + '.csv', index_col=0)
-    c = df.loc[country]
-    gdp_decade = 'gdpPercap_' + str(year // 10)
-    total = 0.0
-    num_years = 0
-    for yr_header in c.index: # c's index contains reported years
-        if yr_header.startswith(gdp_decade):
-            total = total + c.loc[yr_header]
-            num_years = num_years + 1
-    return total/num_years
-</code></pre></div>    </div>
-    <p>The function can now be called by:</p>
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>avg_gdp_in_decade('Japan','asia',1983)
-</code></pre></div>    </div>
-
-    <div class="output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>20880.023800000003
-</code></pre></div>    </div>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
@@ -708,33 +609,6 @@ avg = (japan.loc[gdp_decade + '2'] + japan.loc[gdp_decade + '7']) / 2
     </li>
   </ol>
 
-  <blockquote class="solution">
-    <h2 id="solution-8">Solution</h2>
-
-    <p>1.</p>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def logistic_map(x, r):
-    return r * x * (1 - x)
-</code></pre></div>    </div>
-
-    <p>2.</p>
-
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>initial_condition = 0.5
-t_final = 10
-r = 1.0
-trajectory = [initial_condition]
-for t in range(1, t_final):
-    trajectory[t] = logistic_map(trajectory[t-1], r)
-</code></pre></div>    </div>
-
-    <p>3.</p>
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>def iterate(initial_condition, t_final, r):
-    trajectory = [initial_condition]
-    for t in range(1, t_final):
-        trajectory[t] = logistic_map(trajectory[t-1], r)
-    return trajectorys
-</code></pre></div>    </div>
-  </blockquote>
 </blockquote>
 
 

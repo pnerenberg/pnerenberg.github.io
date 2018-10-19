@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2018-10-17 21:37:42 -0700">
+    <meta http-equiv="last-modified" content="2018-10-19 13:59:23 -0700">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="">
@@ -355,40 +355,28 @@ print('smallest file has', fewest, 'records')
   <p>Notice that the shape method returns a tuple with 
 the number of rows and columns of the data frame.</p>
 
-  <blockquote class="solution">
-    <h2 id="solution-1">Solution</h2>
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import glob
-import pandas
-fewest = float('Inf')
-for filename in glob.glob('data/*.csv'):
-    dataframe = pandas.read_csv(filename)
-    fewest = min(fewest, dataframe.shape[0])
-print('smallest file has', fewest, 'records')
-</code></pre></div>    </div>
-  </blockquote>
 </blockquote>
 
 <blockquote class="challenge">
   <h2 id="comparing-data">Comparing Data</h2>
 
-  <p>Write a program that reads in the regional data sets
+  <p>Modify this program so that it reads in the <em>regional</em> data sets
 and plots the average GDP per capita for each region over time
 in a single chart.</p>
-  <blockquote class="solution">
-    <h2 id="solution-2">Solution</h2>
-    <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import glob
+
+  <div class="python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import glob
 import pandas 
 import matplotlib.pyplot as plt
+%matplotlib inline
 fig, ax = plt.subplots(1,1)
-for filename in glob.glob('data/gapminder_gdp*.csv'):
-    dataframe = pandas.read_csv(filename)
+for filename in ____.____('data/____'):
+    dataframe = pandas.____(filename)
     # extract region from the filename, expected to be in the format 'data/gapminder_gdp_&lt;region&gt;.csv'
-    region = filename.rpartition('_')[2][:-4] 
-    dataframe.mean().plot(ax=ax, label=region)
+    region = filename.rpartition('_')[2][____] 
+    dataframe.____.plot(ax=ax, label=region)
 plt.legend()
 plt.show()
-</code></pre></div>    </div>
-  </blockquote>
+</code></pre></div>  </div>
 </blockquote>
 
 
