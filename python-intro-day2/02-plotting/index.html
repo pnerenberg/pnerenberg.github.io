@@ -268,7 +268,7 @@
 <span class="n">data</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'data/gapminder_gdp_oceania.csv'</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="s">'country'</span><span class="p">)</span>
 
 <span class="c"># Extract year from last 4 characters of each column name</span>
-<span class="n">years</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'GDPPercap_'</span><span class="p">)</span>
+<span class="n">years</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s">'gdpPercap_'</span><span class="p">)</span>
 <span class="c"># Convert year values to integers, saving results back to dataframe</span>
 <span class="n">data</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">years</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 
